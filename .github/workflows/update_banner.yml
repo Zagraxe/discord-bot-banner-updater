@@ -3,7 +3,7 @@ name: Update Discord Bot Banner
 on:
   push:
     paths:
-      - 'assets/IMG_20250404_030139.png'
+      - 'IMG_20250404_030139.png'
       - 'bot.py'
       - '.github/workflows/update_banner.yml'
 
@@ -29,4 +29,3 @@ jobs:
           DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
         run: |
           python bot.py
-          
