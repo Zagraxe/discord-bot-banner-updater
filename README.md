@@ -1,29 +1,24 @@
-# Discord Server Banner Updater
+# Discord Bot Banner Updater
 
-Automatically updates your Discord server's banner using a bot whenever the banner image is changed.
+This project automatically updates your Discord bot's banner using a GitHub Actions workflow.
 
 ## Setup
 
-1. **Add Secrets** to your GitHub repository:
+1. **Add a secret** to your GitHub repository:
    - `DISCORD_TOKEN`: Your bot's token.
-   - `DISCORD_GUILD_ID`: The ID of your server.
 
-2. **Replace the default banner image** in `assets/banner.png` with your own.
+2. **Replace the default banner image** in `assets/IMG_20250404_030139.png` with your own PNG image.
 
-3. **Commit any changes** to `assets/banner.png`, `bot.py`, or the workflow to trigger the update.
+3. **Commit any changes** to the banner image, `bot.py`, or the workflow file to trigger the update.
 
 ## Files
 
-- `bot.py`: Python script to upload the banner.
-- `requirements.txt`: Required Python dependencies.
-- `.github/workflows/update_banner.yml`: GitHub Actions workflow.
-- `assets/banner.png`: Your banner image.
+- `bot.py`: Python script that uploads the new banner to Discord.
+- `.github/workflows/update_banner.yml`: GitHub Actions workflow to automate the update.
+- `assets/IMG_20250404_030139.png`: Your banner image (PNG format).
 
 ## Requirements
 
-- A Discord bot with permissions to manage server settings.
-- A valid banner image that follows Discord's specs.
+- A valid banner image that meets Discord's specifications.
 
-## Notes
-
-This repo is designed to be simple and reusable. Feel free to fork and use it in your own projects.
+This repository is open-source and ready to be used by anyone.
