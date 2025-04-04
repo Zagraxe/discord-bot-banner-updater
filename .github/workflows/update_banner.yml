@@ -3,7 +3,7 @@ name: Update Discord Bot Banner
 on:
   push:
     paths:
-      - 'IMG_20250404_030139.png'
+      - 'Sir up.png'
       - 'bot.py'
       - '.github/workflows/update_banner.yml'
 
