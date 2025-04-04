@@ -1,19 +1,23 @@
 import os
 import requests
+import base64
 
 TOKEN = os.getenv("DISCORD_TOKEN")
-GUILD_ID = os.getenv("DISCORD_GUILD_ID")
-BANNER_PATH = "assets/banner.png"
+BANNER_PATH = "assets/IMG_20250404_030139.png"
 
 with open(BANNER_PATH, "rb") as image_file:
-    banner_data = image_file.read()
+    encoded_data = base64.b64encode(image_file.read()).decode('utf-8')
 
-url = f"https://discord.com/api/v10/guilds/{GUILD_ID}/banner"
+data_url = f"data:image/png;base64,{encoded_data}"
+url = "https://discord.com/api/v10/users/@me"
 
 response = requests.patch(
     url,
-    headers={"Authorization": f"Bot {TOKEN}"},
-    files={"banner": ("banner.png", banner_data)}
+    headers={
+        "Authorization": f"Bot {TOKEN}",
+        "Content-Type": "application/json"
+    },
+    json={"banner": data_url}
 )
 
 print("Status:", response.status_code)
