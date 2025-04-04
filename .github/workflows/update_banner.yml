@@ -1,0 +1,32 @@
+name: Update Discord Bot Banner
+
+on:
+  push:
+    paths:
+      - 'assets/IMG_20250404_030139.png'
+      - 'bot.py'
+      - '.github/workflows/update_banner.yml'
+
+jobs:
+  update-banner:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install requests
+
+      - name: Run bot script
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+        run: |
+          python bot.py
+          
