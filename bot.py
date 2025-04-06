@@ -4,7 +4,7 @@ import base64
 
 # Get environment variable
 TOKEN = os.getenv("DISCORD_TOKEN")
-BANNER_PATH = "Sir up.png"  # Image located in the root directory
+BANNER_PATH = "banner.png"  # Image located in the root directory
 
 # Read and encode image
 with open(BANNER_PATH, "rb") as image_file:
